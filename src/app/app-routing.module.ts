@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { ServicesComponent } from './services/services.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { LeftNavInventoryComponent } from './left-nav-inventory/left-nav-inventory.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'services', component: ServicesComponent },
 { path: 'inventory', component: InventoryComponent },
 { path: 'left-nav-inventory', component: LeftNavInventoryComponent },
+{ path: 'employee', component: EmployeeComponent },
 
 
 ];

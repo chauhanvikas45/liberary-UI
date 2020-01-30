@@ -18,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ServicesComponent } from './services/services.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { LeftNavInventoryComponent } from './left-nav-inventory/left-nav-inventory.component';
+import { EmployeeComponent } from './employee/employee.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { LeftNavInventoryComponent } from './left-nav-inventory/left-nav-invento
     FooterComponent,
     ServicesComponent,
     InventoryComponent,
-    LeftNavInventoryComponent
+    LeftNavInventoryComponent,
+    EmployeeComponent
   ],
   imports: [
         BrowserModule,
