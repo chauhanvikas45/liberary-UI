@@ -19,6 +19,7 @@ import { ServicesComponent } from './services/services.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { LeftNavInventoryComponent } from './left-nav-inventory/left-nav-inventory.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { RouterModule, Routes } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { EmployeeComponent } from './employee/employee.component';
         MatIconModule,
         MatButtonModule,
         MatCardModule,
-        MatProgressSpinnerModule
+        MatProgressSpinnerModule,
+        RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
