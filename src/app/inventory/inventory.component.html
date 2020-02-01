@@ -1,1 +1,70 @@
-<app-left-nav-inventory></app-left-nav-inventory>
+<!-- <app-left-nav-inventory></app-left-nav-inventory> -->
+
+<!-- <form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <textarea matInput placeholder="Leave a comment"></textarea>
+  </mat-form-field>
+</form> -->
+<!-- <table mat-table >
+   <th mat-header-cell><tr><td>Id</td><td>Name</td><td>Author</td><td>Category</td><td>Price</td></tr></th>
+<div *ngFor="let inventory of mockInventory">
+    <tr>
+      <td >{{inventory.bookId}}</td>
+      <td >{{inventory.bookName}}</td>
+      <td >{{inventory.authorName}}</td>
+      <td >{{inventory.category}}</td>
+      <td >{{inventory.bookPrice}}</td>
+    </tr>
+</div>
+</table> -->
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let element"> {{element.bookId}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.bookName}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="author">
+    <th mat-header-cell *matHeaderCellDef> Author </th>
+    <td mat-cell *matCellDef="let element"> {{element.authorName}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef> Category </th>
+    <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+  </ng-container>
+
+  <!--price column-->
+  <ng-container matColumnDef="price">
+    <th mat-header-cell *matHeaderCellDef> Price </th>
+    <td mat-cell *matCellDef="let element"> {{element.bookPrice}} </td>
+  </ng-container>
+
+  <!--Action column-->
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef> Action </th>
+    <td mat-cell *matCellDef="let element"><button mat-button (click)="editItem(row)">edit</button></td>
+  </ng-container>
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<button mat-button color="primary" (click)="addBook()">Add book</button>

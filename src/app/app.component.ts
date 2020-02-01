@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FooterComponent } from './footer/footer.component';
+//import { FooterComponent } from './footer/footer.component';
+import { FormControl } from "@angular/forms";
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
