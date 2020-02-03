@@ -19,6 +19,7 @@ import { RouterModule, Routes, Router } from '@angular/router';
 import { MatSliderModule,MatToolbarModule,MatButtonModule,MatFormFieldModule,MatIconModule,
   MatInputModule,MatTableModule,MatChipsModule } from '@angular/material';
 import { AddBookComponent } from './add-book/add-book.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { AddBookComponent } from './add-book/add-book.component';
         MatIconModule,
         MatInputModule,
         MatTableModule,
-        MatChipsModule
+        MatChipsModule,
+        FormsModule
+        
   ],
   providers: [],
   bootstrap: [AppComponent]
