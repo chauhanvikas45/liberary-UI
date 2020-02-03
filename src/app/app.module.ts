@@ -11,7 +11,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   //import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { ServicesComponent } from './services/services.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { LeftNavInventoryComponent } from './left-nav-inventory/left-nav-inventory.component';
 import { EmployeeComponent } from './employee/employee.component';
@@ -21,6 +20,7 @@ import { MatSliderModule,MatToolbarModule,MatButtonModule,MatFormFieldModule,Mat
 import { AddBookComponent } from './add-book/add-book.component';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +29,6 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ServicesComponent,
     InventoryComponent,
     LeftNavInventoryComponent,
     EmployeeComponent,
@@ -51,6 +50,7 @@ import { FormsModule } from '@angular/forms';
         MatTableModule,
         MatChipsModule,
         FormsModule
+        
         
   ],
   providers: [],
