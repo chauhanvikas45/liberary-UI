@@ -1,5 +1,5 @@
 export interface Inventory{
-    bookId:number;
+    Id:number;
     bookName:string;
     authorName:string;
     category:string;
