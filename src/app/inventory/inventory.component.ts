@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Inventory } from '../models/Inventory';
 import { mock_inventory } from '../Mock_data/mock_data_inventory';
 import { Router } from '@angular/router';
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, } from '@angular/material';
+import { FormControl, Validators } from '@angular/forms';
 //import { MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -11,6 +12,7 @@ import { MatTableDataSource } from '@angular/material';
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent implements OnInit {
+  show: boolean;
 
   constructor(private router : Router) { }
 
@@ -19,7 +21,13 @@ export class InventoryComponent implements OnInit {
   dataSource = new MatTableDataSource(this.mockInventory);
   //dataSource = this.mockInventory;
 
-  
+  empty = new FormControl('', [Validators.required, Validators.nullValidator]);
+
+  getErrorMessage() {
+    return this.empty.hasError('required') ? 'You must enter a value' :
+        this.empty.hasError('price') ? 'Not valid ' :
+            '';
+  }
   ngOnInit() {
     console.log("MOCK DATA--",this.mockInventory);
   }
@@ -38,6 +46,14 @@ export class InventoryComponent implements OnInit {
 
   addBook(){
     console.log("in add book form");
-    this.router.navigate(['./add-book']);
+    //this.router.navigate(['./add-book']);
+    this.show =false;
+    
+  }
+  add(){
+    console.log("in add book form");
+    //this.router.navigate(['./add-book']);
+    this.show =true;
+    
   }
 }
