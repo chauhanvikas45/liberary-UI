@@ -1,0 +1,45 @@
+{
+  "inventory": [
+    {
+      "id": 1,
+      "bookName": "JAVA",
+      "authorName": "AAAA",
+      "category": "X",
+      "bookPrice": 11
+    },
+    {
+      "id": 2,
+      "bookName": "JAVA2",
+      "authorName": "BBBB",
+      "category": "Y",
+      "bookPrice": 22
+    },
+    {
+      "id": 3,
+      "bookName": "JAVA3",
+      "authorName": "BBBB",
+      "category": "Y",
+      "bookPrice": 22
+    }
+  ],
+  "book_register": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    },
+    {
+      "id": 2,
+      "body": "22222 some comment",
+      "postId": 22222
+    },
+    {
+      "body": "some comment333",
+      "postId": 3,
+      "id": 3
+    }
+  ],
+  "employee": {
+    "name": "typicode"
+  }
+}
