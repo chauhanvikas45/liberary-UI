@@ -15,7 +15,9 @@ import { InventoryService } from '../service/inventory.service';
 export class InventoryComponent implements OnInit {
   show: boolean;
   
-  constructor(private router : Router, private inventoryService:InventoryService) { }
+  constructor(private router : Router, private inventoryService:InventoryService) { 
+    this.getInventoryList();
+  }
 
   mockInventory:Inventory[] = mock_inventory;
  bookList=[];
@@ -33,14 +35,15 @@ export class InventoryComponent implements OnInit {
   ngOnInit() {
     
     //console.log("MOCK DATA--",this.mockInventory);
-    this.getInventoryList();
+    
   }
 
 
   getInventoryList(){
-    this.inventoryService.getItems('inventory').subscribe((result:[]) => {
+    this.inventoryService.getReequest('/inventory').subscribe((result:[]) => {
       //console.log(result);
       this.bookList = result;
+      this.dataSource = new MatTableDataSource(this.bookList);
     });
     console.log("newwwwww "+this.bookList);
     console.log("end");
@@ -58,9 +61,16 @@ export class InventoryComponent implements OnInit {
     //this.router.navigate(['/items', item.bookId, 'edit'])
   }
 
-  addBook(){
-    console.log("in add book form");
+  addBook(inventory :Inventory){
+    console.log("in add book form" +inventory.bookName);
+    console.log("in add book form" +inventory.authorName);
+    console.log("in add book form" +inventory.category);
+    console.log("in add book form" +inventory.bookPrice);
     //this.router.navigate(['./add-book']);
+    this.inventoryService.postRequest('/inventory',inventory).subscribe((result:[]) =>{
+      this.bookList=result;
+      this.getInventoryList;
+    })
     this.show =false;
     
   }
