@@ -39,7 +39,7 @@
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.Id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
   </ng-container>
 
   <!-- Name Column -->
@@ -90,21 +90,21 @@
 </div>
 
 <div *ngIf="show">
-  <form class="example-form">
+  <form class="example-form" name="inventory" id ="inventory"  method="post">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Book Name" >
+      <input matInput placeholder="Book Name" [(ngModel)]="inventory.bookName" name="bookName" >
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Author Name" >
+      <input matInput placeholder="Author Name" [(ngModel)]="inventory.authorName" name="authorName">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Category" >
+      <input matInput placeholder="Category" [(ngModel)]="inventory.category" name="category">
     </mat-form-field>
   
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="price" >
+      <input matInput placeholder="price" [(ngModel)]="inventory.bookPrice" name="bookPrice">
     </mat-form-field>
     <button mat-button color="primary" id="add-book" (click)="addBook()">Add</button>
   </form>
