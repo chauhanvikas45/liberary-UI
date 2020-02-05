@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { MatTableDataSource, } from '@angular/material';
 import { FormControl, Validators } from '@angular/forms';
 import { InventoryService } from '../service/inventory.service';
+import { InventoryList } from '../models/inventoryList';
 //import { MatTableDataSource } from '@angular/material';
 
 @Component({
@@ -14,11 +15,12 @@ import { InventoryService } from '../service/inventory.service';
 })
 export class InventoryComponent implements OnInit {
   show: boolean;
-  
+  inventory = new InventoryList();
   constructor(private router : Router, private inventoryService:InventoryService) { 
     this.getInventoryList();
+    //this.inventory= new Inventory();
   }
-
+  
   mockInventory:Inventory[] = mock_inventory;
  bookList=[];
   displayedColumns: string[] = ['id', 'name', 'author', 'category','price','action'];
@@ -61,13 +63,13 @@ export class InventoryComponent implements OnInit {
     //this.router.navigate(['/items', item.bookId, 'edit'])
   }
 
-  addBook(inventory :Inventory){
-    console.log("in add book form" +inventory.bookName);
-    console.log("in add book form" +inventory.authorName);
-    console.log("in add book form" +inventory.category);
-    console.log("in add book form" +inventory.bookPrice);
+  addBook(){
+    console.log("in add book form" +this.inventory.bookName);
+    //console.log("in add book form" +inventory.authorName);
+    //console.log("in add book form" +inventory.category);
+    //console.log("in add book form" +inventory.bookPrice);
     //this.router.navigate(['./add-book']);
-    this.inventoryService.postRequest('/inventory',inventory).subscribe((result:[]) =>{
+    this.inventoryService.postRequest('/inventory',this.inventory).subscribe((result:[]) =>{
       this.bookList=result;
       this.getInventoryList;
     })
