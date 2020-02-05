@@ -1,26 +1,4 @@
-<!-- <app-left-nav-inventory></app-left-nav-inventory> -->
 
-<!-- <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Favorite food" value="Sushi">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Leave a comment"></textarea>
-  </mat-form-field>
-</form> -->
-<!-- <table mat-table >
-   <th mat-header-cell><tr><td>Id</td><td>Name</td><td>Author</td><td>Category</td><td>Price</td></tr></th>
-<div *ngFor="let inventory of mockInventory">
-    <tr>
-      <td >{{inventory.bookId}}</td>
-      <td >{{inventory.bookName}}</td>
-      <td >{{inventory.authorName}}</td>
-      <td >{{inventory.category}}</td>
-      <td >{{inventory.bookPrice}}</td>
-    </tr>
-</div>
-</table> -->
 <div class="table">
 <div class="example-container mat-elevation-z8">
 	<div class="example-header">
@@ -84,9 +62,7 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-<!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
-
-<!-- <button mat-button color="primary" id="add-form" (click)="add()">Add book</button> -->
+<mat-paginator [pageSizeOptions]="[5, 10]"></mat-paginator>
 </div>
 
 <div>

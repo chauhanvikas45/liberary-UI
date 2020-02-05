@@ -1,12 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Inventory } from '../models/Inventory';
 import { mock_inventory } from '../Mock_data/mock_data_inventory';
 import { Router } from '@angular/router';
-import { MatTableDataSource, } from '@angular/material';
+import { MatTableDataSource, MatPaginator, } from '@angular/material';
 import { FormControl, Validators } from '@angular/forms';
 import { InventoryService } from '../service/inventory.service';
 import { InventoryList } from '../models/inventoryList';
-//import { MatTableDataSource } from '@angular/material';
 
 @Component({
   selector: 'app-inventory',
@@ -16,39 +15,29 @@ import { InventoryList } from '../models/inventoryList';
 export class InventoryComponent implements OnInit {
   show: boolean;
   inventory = new InventoryList();
+  bookList=[];
+  displayedColumns: string[] = ['id', 'name', 'author', 'category','price','action'];
+  dataSource; 
+ 
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  
+  
   constructor(private router : Router, private inventoryService:InventoryService) { 
     this.getInventoryList();
-    //this.inventory= new Inventory();
-  }
-  
-  mockInventory:Inventory[] = mock_inventory;
- bookList=[];
-  displayedColumns: string[] = ['id', 'name', 'author', 'category','price','action'];
-  dataSource = new MatTableDataSource(this.bookList);
-  //dataSource = this.mockInventory;
-
-  empty = new FormControl('', [Validators.required, Validators.nullValidator]);
-
-  getErrorMessage() {
-    return this.empty.hasError('required') ? 'You must enter a value' :
-        this.empty.hasError('price') ? 'Not valid ' :
-            '';
-  }
-  ngOnInit() {
-    
-    //console.log("MOCK DATA--",this.mockInventory);
-    this.getInventoryList()
-  }
-
+    }
+ 
+    ngOnInit() {
+     this.getInventoryList()
+   }
+ 
 
   getInventoryList(){
     this.inventoryService.getReequest('/inventory').subscribe((result:[]) => {
-      //console.log(result);
-      this.bookList = result;
-      this.dataSource = new MatTableDataSource(this.bookList);
+    this.bookList = result;
+    this.dataSource = new MatTableDataSource(this.bookList);
+    this.dataSource.paginator = this.paginator;
     });
-    console.log("newwwwww "+this.bookList);
-    console.log("end");
+    
   }
 
   applyFilter(filterValue: string) {
@@ -57,24 +46,16 @@ export class InventoryComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
-  editItem(item: Inventory) {
-    console.log("edit method called "+item);
-    //this.store.dispatch(new itemsActions.SetCurrentItemId(item.bookId));
-    //this.router.navigate(['/items', item.bookId, 'edit'])
-  }
-
+  
   addBook(){
-    console.log("in add book form" +this.inventory.bookName);
-    console.log("in add book form" +this.inventory.authorName);
-    console.log("in add book form" +this.inventory.category);
-    console.log("in add book form" +this.inventory.bookPrice);
-    //this.router.navigate(['./add-book']);
     this.inventoryService.postRequest('/inventory',this.inventory).subscribe((result:[]) =>{
       this.bookList=result;
-      this.getInventoryList;
+      this.getInventoryList();
     })
+    
     this.formClear()
     this.show =false;
+    
   }
 
   formClear() {
@@ -84,8 +65,6 @@ export class InventoryComponent implements OnInit {
     this.inventory.bookPrice=0;
   }
 
-
-
   toggle(){
     console.log("in add book form");
     //this.router.navigate(['./add-book']);
@@ -94,7 +73,5 @@ export class InventoryComponent implements OnInit {
     }else{
       this.show=false;
     }
-    
-    
   }
 }
