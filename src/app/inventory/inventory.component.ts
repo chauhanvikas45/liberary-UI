@@ -37,7 +37,7 @@ export class InventoryComponent implements OnInit {
   ngOnInit() {
     
     //console.log("MOCK DATA--",this.mockInventory);
-    
+    this.getInventoryList()
   }
 
 
@@ -65,21 +65,36 @@ export class InventoryComponent implements OnInit {
 
   addBook(){
     console.log("in add book form" +this.inventory.bookName);
-    //console.log("in add book form" +inventory.authorName);
-    //console.log("in add book form" +inventory.category);
-    //console.log("in add book form" +inventory.bookPrice);
+    console.log("in add book form" +this.inventory.authorName);
+    console.log("in add book form" +this.inventory.category);
+    console.log("in add book form" +this.inventory.bookPrice);
     //this.router.navigate(['./add-book']);
     this.inventoryService.postRequest('/inventory',this.inventory).subscribe((result:[]) =>{
       this.bookList=result;
       this.getInventoryList;
     })
+    this.formClear()
     this.show =false;
-    
   }
-  add(){
+
+  formClear() {
+    this.inventory.bookName='';
+    this.inventory.authorName='';
+    this.inventory.category='';
+    this.inventory.bookPrice=0;
+  }
+
+
+
+  toggle(){
     console.log("in add book form");
     //this.router.navigate(['./add-book']);
-    this.show =true;
+    if(this.show==false){
+      this.show =true;
+    }else{
+      this.show=false;
+    }
+    
     
   }
 }
