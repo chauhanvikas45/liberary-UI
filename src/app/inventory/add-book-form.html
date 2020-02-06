@@ -1,26 +1,26 @@
 <!-- <h1 mat-dialog-title>Hi {{data.name}}</h1> -->
 <div>
-<form class="example-form" name="inventory" id ="inventory"  method="post">
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Book Name"  name="bookName" >  
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Author Name" name="authorName">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="Category"  name="category">
-  </mat-form-field>
-
-  <mat-form-field class="example-full-width">
-    <input matInput placeholder="price"  name="bookPrice" pattern="[0-9]{0-4}">
-  </mat-form-field>
-  <button mat-button (click)="onNoClick()">No Thanks</button>
-  <button mat-button (click)="addBook()">Ok</button>
-  <!-- <button mat-button color="primary" id="add-book" (click)="addBook()">Add</button> -->
-</form>
-</div>
-<!-- <div mat-dialog-actions>
+  <form class="example-form" name="inventory" id ="inventory"  method="post">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Book Name"  name="bookName" [(ngModel)]="data.bookName" >  
+    </mat-form-field>
   
-</div> -->
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Author Name" name="authorName" [(ngModel)]="data.authorName">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Category"  name="category" [(ngModel)]="data.category">
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="price"  name="bookPrice" pattern="[0-9]{0-4}" [(ngModel)]="data.bookPrice">
+    </mat-form-field>
+    <button mat-button (click)="close(null)">No Thanks</button>
+    <button mat-button (click)="close(data)">Ok</button>
+    <!-- <button mat-button color="primary" id="add-book" (click)="addBook()">Add</button> -->
+  </form>
+  </div>
+  <!-- <div mat-dialog-actions>
+    
+  </div> -->

@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewChild ,Inject} from '@angular/core';
+import { Component, OnInit, ViewChild, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatTableDataSource, MatPaginator, } from '@angular/material';
 import { InventoryService } from '../service/inventory.service';
 import { InventoryList } from '../models/inventoryList';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Inventory } from '../models/Inventory';
 
 @Component({
   selector: 'app-inventory',
@@ -13,32 +14,32 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 export class InventoryComponent implements OnInit {
   show: boolean;
   inventory = new InventoryList();
-  bookList=[];
-  displayedColumns: string[] = ['id', 'name', 'author', 'category','price','status'];
-  public dataSource; 
-  
- 
+  bookList = [];
+  displayedColumns: string[] = ['id', 'name', 'author', 'category', 'price', 'status'];
+  public dataSource;
+
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
   inventoryTable: boolean;
-  
-  
-  constructor(private router : Router, private inventoryService:InventoryService,public dialog: MatDialog) { 
-    this.getInventoryList();
-    }
- 
-    ngOnInit() {
-      this.inventoryTable=true
-     this.getInventoryList()
-   }
- 
 
-  getInventoryList(){
-    this.inventoryService.getReequest('/inventory').subscribe((result:[]) => {
-    this.bookList = result;
-    this.dataSource = new MatTableDataSource(this.bookList);
-    this.dataSource.paginator = this.paginator;
+
+  constructor(private router: Router, private inventoryService: InventoryService, public dialog: MatDialog) {
+    this.getInventoryList();
+  }
+
+  ngOnInit() {
+    this.inventoryTable = true
+    this.getInventoryList()
+  }
+
+
+  getInventoryList() {
+    this.inventoryService.getReequest('/inventory').subscribe((result: []) => {
+      this.bookList = result;
+      this.dataSource = new MatTableDataSource(this.bookList);
+      this.dataSource.paginator = this.paginator;
     });
-    
+
   }
 
   applyFilter(filterValue: string) {
@@ -47,37 +48,18 @@ export class InventoryComponent implements OnInit {
     this.dataSource.filter = filterValue;
   }
 
+
   
-  addBook(){
-    console.log("in add book")
-    this.inventory.status='available'
-    this.inventoryService.postRequest('/inventory',this.inventory).subscribe((result:[]) =>{
-    this.bookList.push(result);  
-    this.dataSource.paginator = this.paginator;
-    })
-    console.log("after add book")
-    this.formClear()
-    this.show =false;
-    
-  }
 
-  formClear() {
-    this.inventory.bookName='';
-    this.inventory.authorName='';
-    this.inventory.category='';
-    this.inventory.bookPrice=0;
-    this.inventory.status='available';
-  }
-
-  toggle(){
+  toggle() {
     console.log("in add book form");
     //this.router.navigate(['./add-book']);
-    if(this.show==false){
-      this.inventoryTable=false;
-      this.show =true;
-    }else{
-      this.show=false;
-      this.inventoryTable=true;
+    if (this.show == false) {
+      this.inventoryTable = false;
+      this.show = true;
+    } else {
+      this.show = false;
+      this.inventoryTable = true;
     }
   }
 
@@ -85,14 +67,31 @@ export class InventoryComponent implements OnInit {
     console.log("open dialog called");
     const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
       width: '50%',
-      data: {name: this.inventory.bookName, author: this.inventory.authorName,category: this.inventory.authorName,price: this.inventory.bookPrice}
-      
+      data: { bookName: this.inventory.bookName, authorName: this.inventory.authorName, category: this.inventory.category, bookPrice: this.inventory.bookPrice, status:"available"}
+
     });
     console.log("before close dialog")
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.bookList = result;
+    dialogRef.afterClosed().subscribe((result:Inventory) => {
+      console.log('The dialog was closed---',result);
+      if(result){
+        this.addBook(result);
+      }
     });
+  }
+
+  addBook(result:Inventory) {
+    console.log("in add book--",this.bookList)
+    this.inventoryService.postRequest('/inventory', result).subscribe((response: any) => {
+      console.log("response--",response);
+      this.bookList.push(result);
+      console.log("BOOKLIST AFTER--",this.bookList);
+      this.dataSource.data  = this.bookList;
+      this.dataSource.paginator = this.paginator;
+    });
+    console.log("after add book")
+    //this.formClear()
+    this.show = false;
+
   }
 
 }
@@ -102,37 +101,30 @@ export class InventoryComponent implements OnInit {
   selector: 'add-book-form',
   templateUrl: './add-book-form.html',
 })
-export class DialogOverviewExampleDialog {
-  inventory= new InventoryList();
+export class DialogOverviewExampleDialog implements OnInit {
+
+  inventory = new InventoryList();
   //inventoryService: any;
-  bookList=[];
-  inventoryComponent :InventoryComponent
+  bookList = [];
+  inventoryComponent: InventoryComponent
   show: boolean;
   constructor(
     public dialogRef: MatDialogRef<DialogOverviewExampleDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: InventoryComponent, private inventoryService : InventoryService) {
-      console.log("inject called");
-    }
+    @Inject(MAT_DIALOG_DATA) public data: Inventory, private inventoryService: InventoryService) {
+    console.log("inject called");
+  }
 
-  onNoClick(): void {
+  ngOnInit(): void {
+    console.log("---------", this.data);
+  }
+  close(data:any): void {
     console.log("onNoclick callaed");
-    this.dialogRef.close();
+    this.dialogRef.close(data);
   }
 
-  addBook(){
-    console.log("in add book")
-    this.inventory.status='available'
-    this.inventoryService.postRequest('/inventory',this.inventory).subscribe((result:[]) =>{
-    this.bookList.push(result);  
-    this.inventoryComponent.dataSource.paginator = this.inventoryComponent.paginator;
-    })
-    console.log("after add book")
-    this.formClear()
-    this.show =false;
-    
-  }
-  formClear() {
-    throw new Error("Method not implemented.");
-  }
+  
+  // formClear() {
+  //   throw new Error("Method not implemented.");
+  // }
 
 }

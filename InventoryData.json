@@ -71,6 +71,14 @@
     {
       "status": "available",
       "id": 46
+    },
+    {
+      "bookName": "t",
+      "authorName": "h",
+      "category": "h",
+      "bookPrice": "8",
+      "status": "available",
+      "id": 47
     }
   ],
   "book_register": [
