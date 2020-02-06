@@ -11,15 +11,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   //import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
-import { InventoryComponent } from './inventory/inventory.component';
-import { LeftNavInventoryComponent } from './left-nav-inventory/left-nav-inventory.component';
+import { InventoryComponent, DialogOverviewExampleDialog } from './inventory/inventory.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { RouterModule, Routes, Router } from '@angular/router';
 import { MatSliderModule,MatToolbarModule,MatButtonModule,MatFormFieldModule,MatIconModule,
-  MatInputModule,MatTableModule,MatChipsModule } from '@angular/material';
+  MatInputModule,MatTableModule,MatChipsModule,MatButtonToggleModule,MatDialogModule } from '@angular/material';
 import { AddBookComponent } from './add-book/add-book.component';
 import { FormsModule } from '@angular/forms';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { BookRegisterComponent } from './book-register/book-register.component';
 
 
 @NgModule({
@@ -31,10 +31,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     HeaderComponent,
     FooterComponent,
     InventoryComponent,
-    LeftNavInventoryComponent,
     EmployeeComponent,
-    AddBookComponent
-  
+    AddBookComponent,
+    BookRegisterComponent,
+    DialogOverviewExampleDialog
+    
 
   ],
   imports: [
@@ -51,10 +52,13 @@ import {MatPaginatorModule} from '@angular/material/paginator';
         MatTableModule,
         MatChipsModule,
         FormsModule,
-        MatPaginatorModule
+        MatPaginatorModule,
+        MatButtonToggleModule,
+        MatDialogModule,
         
         
   ],
+  entryComponents: [DialogOverviewExampleDialog],
   providers: [],
   bootstrap: [AppComponent]
 })

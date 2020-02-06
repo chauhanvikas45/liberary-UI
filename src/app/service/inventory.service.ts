@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Inventory } from '../models/Inventory';
-import { mock_inventory } from '../Mock_data/mock_data_inventory';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { InventoryComponent } from '../inventory/inventory.component';

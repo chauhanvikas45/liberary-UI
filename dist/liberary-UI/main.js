@@ -23,35 +23,6 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
-/***/ "./src/app/Mock_data/mock_data_inventory.ts":
-/*!**************************************************!*\
-  !*** ./src/app/Mock_data/mock_data_inventory.ts ***!
-  \**************************************************/
-/*! exports provided: mock_inventory */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "mock_inventory", function() { return mock_inventory; });
-var mock_inventory = [{
-        bookId: 1,
-        bookName: "JAVA",
-        authorName: "AAAA",
-        category: "X",
-        bookPrice: 11
-    },
-    {
-        bookId: 2,
-        bookName: "JAVA2",
-        authorName: "BBBB",
-        category: "Y",
-        bookPrice: 22
-    }
-];
-
-
-/***/ }),
-
 /***/ "./src/app/about/about.component.css":
 /*!*******************************************!*\
   !*** ./src/app/about/about.component.css ***!
@@ -151,7 +122,7 @@ var AddBookComponent = /** @class */ (function () {
     };
     AddBookComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-add-book',
+            selector: 'add-book',
             template: __webpack_require__(/*! ./add-book.component.html */ "./src/app/add-book/add-book.component.html"),
             styles: [__webpack_require__(/*! ./add-book.component.css */ "./src/app/add-book/add-book.component.css")]
         }),
@@ -181,12 +152,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./home/home.component */ "./src/app/home/home.component.ts");
 /* harmony import */ var _about_about_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about/about.component */ "./src/app/about/about.component.ts");
 /* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _services_services_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./services/services.component */ "./src/app/services/services.component.ts");
-/* harmony import */ var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./inventory/inventory.component */ "./src/app/inventory/inventory.component.ts");
-/* harmony import */ var _left_nav_inventory_left_nav_inventory_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./left-nav-inventory/left-nav-inventory.component */ "./src/app/left-nav-inventory/left-nav-inventory.component.ts");
-/* harmony import */ var _employee_employee_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./employee/employee.component */ "./src/app/employee/employee.component.ts");
-/* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./add-book/add-book.component */ "./src/app/add-book/add-book.component.ts");
-
+/* harmony import */ var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./inventory/inventory.component */ "./src/app/inventory/inventory.component.ts");
+/* harmony import */ var _employee_employee_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./employee/employee.component */ "./src/app/employee/employee.component.ts");
+/* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./add-book/add-book.component */ "./src/app/add-book/add-book.component.ts");
+/* harmony import */ var _book_register_book_register_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./book-register/book-register.component */ "./src/app/book-register/book-register.component.ts");
 
 
 
@@ -203,11 +172,10 @@ var routes = [
     { path: 'home', component: _home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"] },
     { path: 'about', component: _about_about_component__WEBPACK_IMPORTED_MODULE_5__["AboutComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"] },
-    { path: 'services', component: _services_services_component__WEBPACK_IMPORTED_MODULE_7__["ServicesComponent"] },
-    { path: 'inventory', component: _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_8__["InventoryComponent"] },
-    { path: 'left-nav-inventory', component: _left_nav_inventory_left_nav_inventory_component__WEBPACK_IMPORTED_MODULE_9__["LeftNavInventoryComponent"] },
-    { path: 'employee', component: _employee_employee_component__WEBPACK_IMPORTED_MODULE_10__["EmployeeComponent"] },
-    { path: 'add-book', component: _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_11__["AddBookComponent"] },
+    { path: 'inventory', component: _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_7__["InventoryComponent"] },
+    { path: 'employee', component: _employee_employee_component__WEBPACK_IMPORTED_MODULE_8__["EmployeeComponent"] },
+    { path: 'add-book', component: _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_9__["AddBookComponent"] },
+    { path: 'book-register', component: _book_register_book_register_component__WEBPACK_IMPORTED_MODULE_10__["BookRegisterComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -269,12 +237,18 @@ var AppComponent = /** @class */ (function () {
     function AppComponent() {
         this.title = 'liberary-UI';
     }
+    AppComponent.prototype.ngOnInit = function () {
+        //   this.inventoryService.get().subscribe(res => {
+        //     this.inventory = res;
+        //   });
+    };
     AppComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
     ], AppComponent);
     return AppComponent;
 }());
@@ -305,12 +279,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
 /* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./header/header.component */ "./src/app/header/header.component.ts");
 /* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/footer/footer.component.ts");
-/* harmony import */ var _services_services_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./services/services.component */ "./src/app/services/services.component.ts");
-/* harmony import */ var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./inventory/inventory.component */ "./src/app/inventory/inventory.component.ts");
-/* harmony import */ var _left_nav_inventory_left_nav_inventory_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./left-nav-inventory/left-nav-inventory.component */ "./src/app/left-nav-inventory/left-nav-inventory.component.ts");
-/* harmony import */ var _employee_employee_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./employee/employee.component */ "./src/app/employee/employee.component.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./add-book/add-book.component */ "./src/app/add-book/add-book.component.ts");
+/* harmony import */ var _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./inventory/inventory.component */ "./src/app/inventory/inventory.component.ts");
+/* harmony import */ var _employee_employee_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./employee/employee.component */ "./src/app/employee/employee.component.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./add-book/add-book.component */ "./src/app/add-book/add-book.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _angular_material_paginator__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @angular/material/paginator */ "./node_modules/@angular/material/esm5/paginator.es5.js");
+/* harmony import */ var _book_register_book_register_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./book-register/book-register.component */ "./src/app/book-register/book-register.component.ts");
 
 
 
@@ -322,6 +297,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 //import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
 
 
 
@@ -342,32 +318,111 @@ var AppModule = /** @class */ (function () {
                 _home_home_component__WEBPACK_IMPORTED_MODULE_8__["HomeComponent"],
                 _header_header_component__WEBPACK_IMPORTED_MODULE_10__["HeaderComponent"],
                 _footer_footer_component__WEBPACK_IMPORTED_MODULE_11__["FooterComponent"],
-                _services_services_component__WEBPACK_IMPORTED_MODULE_12__["ServicesComponent"],
-                _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_13__["InventoryComponent"],
-                _left_nav_inventory_left_nav_inventory_component__WEBPACK_IMPORTED_MODULE_14__["LeftNavInventoryComponent"],
-                _employee_employee_component__WEBPACK_IMPORTED_MODULE_15__["EmployeeComponent"],
-                _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_17__["AddBookComponent"]
+                _inventory_inventory_component__WEBPACK_IMPORTED_MODULE_12__["InventoryComponent"],
+                _employee_employee_component__WEBPACK_IMPORTED_MODULE_13__["EmployeeComponent"],
+                _add_book_add_book_component__WEBPACK_IMPORTED_MODULE_15__["AddBookComponent"],
+                _book_register_book_register_component__WEBPACK_IMPORTED_MODULE_18__["BookRegisterComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_9__["BrowserAnimationsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatSliderModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatFormFieldModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatChipsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_16__["MatTableDataSource"]
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatSliderModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatFormFieldModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatTableModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatChipsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_16__["FormsModule"],
+                _angular_material_paginator__WEBPACK_IMPORTED_MODULE_17__["MatPaginatorModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatButtonToggleModule"], _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatDialog"], _angular_material__WEBPACK_IMPORTED_MODULE_14__["MatDialogRef"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/book-register/book-register.component.css":
+/*!***********************************************************!*\
+  !*** ./src/app/book-register/book-register.component.css ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2Jvb2stcmVnaXN0ZXIvYm9vay1yZWdpc3Rlci5jb21wb25lbnQuY3NzIn0= */"
+
+/***/ }),
+
+/***/ "./src/app/book-register/book-register.component.html":
+/*!************************************************************!*\
+  !*** ./src/app/book-register/book-register.component.html ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div style=\"margin-left: 9%;margin-right: 9%;\">\n<div style=\"margin-left: 40%;\">\n  <mat-button-toggle-group name=\"fontStyle\" aria-label=\"Font Style\">\n  <mat-button-toggle value=\"bold\" (click)=toggle(true)>Issue</mat-button-toggle>\n  <mat-button-toggle value=\"italic\" (click)=toggle(false)>Return</mat-button-toggle>\n  <!-- <mat-button-toggle value=\"underline\">Underline</mat-button-toggle> -->\n</mat-button-toggle-group>\n</div>\n<div id=\"issueForm\" *ngIf=\"showIssueForm\">\n  <div class=\"example-container mat-elevation-z8\">\n    <div class=\"example-header\">\n      <mat-form-field>\n        <input matInput #filter (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n        <button mat-icon-button matSuffix aria-label=\"clear\" *ngIf=\"filter.value\" (click)=\"filter.value=''; applyFilter('');\">\n          <mat-icon>close</mat-icon>\n        </button>\n      </mat-form-field>\n    </div>\n<p>\n  issue form\n</p>\n</div>\n</div>\n\n\n<div id=\"returnForm\" *ngIf=\"showReturnForm\">\n  <div class=\"example-container mat-elevation-z8\">\n    <div class=\"example-header\">\n      <mat-form-field>\n        <input matInput #filter (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n        <button mat-icon-button matSuffix aria-label=\"clear\" *ngIf=\"filter.value\" (click)=\"filter.value=''; applyFilter('');\">\n          <mat-icon>close</mat-icon>\n        </button>\n      </mat-form-field>\n    </div>\n  <p>\n    return form\n  </p>\n</div>\n</div>\n</div> "
+
+/***/ }),
+
+/***/ "./src/app/book-register/book-register.component.ts":
+/*!**********************************************************!*\
+  !*** ./src/app/book-register/book-register.component.ts ***!
+  \**********************************************************/
+/*! exports provided: BookRegisterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookRegisterComponent", function() { return BookRegisterComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _models_inventoryList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../models/inventoryList */ "./src/app/models/inventoryList.ts");
+
+
+
+var BookRegisterComponent = /** @class */ (function () {
+    function BookRegisterComponent() {
+        this.inventory = new _models_inventoryList__WEBPACK_IMPORTED_MODULE_2__["InventoryList"]();
+        this.bookList = [];
+        this.displayedColumns = ['id', 'name', 'author', 'category', 'price', 'status'];
+    }
+    BookRegisterComponent.prototype.ngOnInit = function () {
+    };
+    BookRegisterComponent.prototype.toggle = function (form) {
+        console.log("in show form");
+        //this.router.navigate(['./add-book']);
+        if (form == true) {
+            this.showIssueForm = true;
+            this.showReturnForm = false;
+        }
+        else {
+            this.showIssueForm = false;
+            this.showReturnForm = true;
+        }
+    };
+    BookRegisterComponent.prototype.applyFilter = function (filterValue) {
+        filterValue = filterValue.trim(); // Remove whitespace
+        filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+        this.dataSource.filter = filterValue;
+    };
+    BookRegisterComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+            selector: 'app-book-register',
+            template: __webpack_require__(/*! ./book-register.component.html */ "./src/app/book-register/book-register.component.html"),
+            styles: [__webpack_require__(/*! ./book-register.component.css */ "./src/app/book-register/book-register.component.css")]
+        }),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
+    ], BookRegisterComponent);
+    return BookRegisterComponent;
 }());
 
 
@@ -437,7 +492,7 @@ var EmployeeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".footer {\r\n  position: fixed;\r\n  bottom: 0;\r\n  width: 100%;\r\n  left: 0;\r\n  text-align: center;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLFNBQVM7RUFDVCxXQUFXO0VBQ1gsT0FBTztFQUNQLGtCQUFrQjtBQUNwQiIsImZpbGUiOiJzcmMvYXBwL2Zvb3Rlci9mb290ZXIuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5mb290ZXIge1xyXG4gIHBvc2l0aW9uOiBmaXhlZDtcclxuICBib3R0b206IDA7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbiAgbGVmdDogMDtcclxuICB0ZXh0LWFsaWduOiBjZW50ZXI7XHJcbn1cclxuIl19 */"
+module.exports = ".footer {\r\n  position: fixed;\r\n  bottom: 0;\r\n  width: 100%;\r\n  left: 0;\r\n  text-align: center;\r\n  height: 5%;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZm9vdGVyL2Zvb3Rlci5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsZUFBZTtFQUNmLFNBQVM7RUFDVCxXQUFXO0VBQ1gsT0FBTztFQUNQLGtCQUFrQjtFQUNsQixVQUFVO0FBQ1oiLCJmaWxlIjoic3JjL2FwcC9mb290ZXIvZm9vdGVyLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZm9vdGVyIHtcclxuICBwb3NpdGlvbjogZml4ZWQ7XHJcbiAgYm90dG9tOiAwO1xyXG4gIHdpZHRoOiAxMDAlO1xyXG4gIGxlZnQ6IDA7XHJcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gIGhlaWdodDogNSU7XHJcbn1cclxuIl19 */"
 
 /***/ }),
 
@@ -560,7 +615,7 @@ module.exports = "section.cms-boxes .cms-boxes-outer {\r\n  text-align: left;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "    <div class=\"container\">\n      <div>\n        <br>\n      </div>\n      <section class=\"cms-boxes\">\n        <div class=\"container-fluid\">\n          <div class=\"row\">\n            <div class=\"col-md-4 cms-boxes-outer\">\n              <div class=\"cms-boxes-items cms-features\">\n                <div class=\"boxes-align\">\n                  <div class=\"small-box\">\n                    <!--<i class=\"fa fa-4x fa-laptop\">&nbsp;</i>-->\n                    <img src=\"../assets/images/inventory.jpg\" (click) = \"redirect('./inventory')\">\n                    \n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-4 cms-boxes-outer\">\n              <div class=\"cms-boxes-items cms-security\">\n                <div class=\"boxes-align\">\n                  <div class=\"small-box\">\n                    <i class=\"fa fa-4x fa-cog\">&nbsp;</i>\n                    <h2>Book Register</h2>\n                    <p>To check issued book.</p>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-4 cms-boxes-outer\">\n              <div class=\"cms-boxes-items cms-features\">\n                <div class=\"boxes-align\">\n                  <div class=\"small-box\">\n                    <i class=\"fa fa-4x fa-laptop\">&nbsp;</i>\n                    <h2>Employee Details</h2>\n                    <p>To Check employee details.</p>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n          <!--\n          <div class=\"row\">\n            <div class=\"col-md-6 cms-boxes-outer\">\n              <div class=\"cms-boxes-items cms-built\">\n                <div class=\"boxes-align\">\n                  <div class=\"large-box\">\n                    <i class=\"fa fa-4x fa-heart\" aria-hidden=\"true\"></i>\n                    <h2>Award-winning customer service</h2>\n                    <p>Award-winning, U.S. based support 24/7. If you need help we are here.</p>\n                  </div>\n                </div>\n              </div>\n            </div>\n            <div class=\"col-md-6 cms-boxes-outer\">\n              <div class=\"cms-boxes-items cms-documentation\">\n                <div class=\"boxes-align\">\n                  <div class=\"large-box\">\n                    <i class=\"fa fa-4x fa-file-code-o\">&nbsp;</i>\n                    <h2>Documentation</h2>\n                    <p>From connecting data sources to styling reports, we have everything you need to get the most value out of WebCorpCo.</p>\n                  </div>\n                </div>\n              </div>\n            </div>\n          </div>\n        </div>\n      </section>\n      -->\n    </div>\n\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css\">\n"
+module.exports = "    <div class=\"container\">\r\n      <div>\r\n        <br>\r\n      </div>\r\n      <section class=\"cms-boxes\">\r\n        <div class=\"container-fluid\" (click) = \"redirect('./inventory')\">\r\n          <div class=\"row\">\r\n            <div class=\"col-md-4 cms-boxes-outer\">\r\n              <div class=\"cms-boxes-items cms-features\">\r\n                <div class=\"boxes-align\">\r\n                  <div class=\"small-box\">\r\n                    <!--<i class=\"fa fa-4x fa-laptop\">&nbsp;</i>-->\r\n                    <img src=\"../assets/images/inventory.jpg\" >\r\n                    \r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-md-4 cms-boxes-outer\" (click) = \"redirect('./book-register')\">\r\n              <div class=\"cms-boxes-items cms-security\">\r\n                <div class=\"boxes-align\">\r\n                  <div class=\"small-box\">\r\n                    <i class=\"fa fa-4x fa-book\" style=\"color:white\">&nbsp;</i>\r\n                    <h2>Book Register</h2>\r\n                    <p>To check issued book.</p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-md-4 cms-boxes-outer\">\r\n              <div class=\"cms-boxes-items cms-features\">\r\n                <div class=\"boxes-align\">\r\n                  <div class=\"small-box\">\r\n                    <i class=\"fa fa-4x fa-user\"  style=\"color:white\">&nbsp;</i>\r\n                    <h2>Employee Details</h2>\r\n                    <p>To Check employee details.</p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <!--\r\n          <div class=\"row\">\r\n            <div class=\"col-md-6 cms-boxes-outer\">\r\n              <div class=\"cms-boxes-items cms-built\">\r\n                <div class=\"boxes-align\">\r\n                  <div class=\"large-box\">\r\n                    <i class=\"fa fa-4x fa-heart\" aria-hidden=\"true\"></i>\r\n                    <h2>Award-winning customer service</h2>\r\n                    <p>Award-winning, U.S. based support 24/7. If you need help we are here.</p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n            <div class=\"col-md-6 cms-boxes-outer\">\r\n              <div class=\"cms-boxes-items cms-documentation\">\r\n                <div class=\"boxes-align\">\r\n                  <div class=\"large-box\">\r\n                    <i class=\"fa fa-4x fa-file-code-o\">&nbsp;</i>\r\n                    <h2>Documentation</h2>\r\n                    <p>From connecting data sources to styling reports, we have everything you need to get the most value out of WebCorpCo.</p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </section>\r\n      -->\r\n    </div>\r\n\r\n<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>\r\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">\r\n<script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js\"></script>\r\n<link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css\">\r\n"
 
 /***/ }),
 
@@ -604,6 +659,17 @@ var HomeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/inventory/add-book-form.html":
+/*!**********************************************!*\
+  !*** ./src/app/inventory/add-book-form.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<h1 mat-dialog-title>Hi {{data.name}}</h1>\r\n<div mat-dialog-content>\r\n  <p>What's your favorite animal?</p>\r\n  <mat-form-field>\r\n    <input matInput [(ngModel)]=\"data.animal\">\r\n  </mat-form-field>\r\n</div>\r\n<div mat-dialog-actions>\r\n  <button mat-button (click)=\"onNoClick()\">No Thanks</button>\r\n  <button mat-button [mat-dialog-close]=\"data.animal\" cdkFocusInitial>Ok</button>\r\n</div>"
+
+/***/ }),
+
 /***/ "./src/app/inventory/inventory.component.css":
 /*!***************************************************!*\
   !*** ./src/app/inventory/inventory.component.css ***!
@@ -611,7 +677,7 @@ var HomeComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "table {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW52ZW50b3J5L2ludmVudG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztFQUNiIiwiZmlsZSI6InNyYy9hcHAvaW52ZW50b3J5L2ludmVudG9yeS5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsidGFibGUge1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgfSJdfQ== */"
+module.exports = ".example-container {\r\n  display: -webkit-box;\r\n  display: flex;\r\n  -webkit-box-orient: vertical;\r\n  -webkit-box-direction: normal;\r\n          flex-direction: column;\r\n  min-width: 300px;\r\n}\r\n\r\n.example-header {\r\n  min-height: 64px;\r\n  padding: 8px 24px 0;\r\n}\r\n\r\n.mat-form-field {\r\n  font-size: 14px;\r\n  width: 100%;\r\n}\r\n\r\n.mat-table {\r\n  overflow: auto;\r\n  max-height: 750px;\r\n}\r\n\r\n.table{\r\n  \r\n  margin-left: 9%;\r\n  margin-right: 9%\r\n}\r\n\r\n.column-width{\r\n  width: -webkit-fit-content;\r\n  width: -moz-fit-content;\r\n  width: fit-content;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaW52ZW50b3J5L2ludmVudG9yeS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0Usb0JBQWE7RUFBYixhQUFhO0VBQ2IsNEJBQXNCO0VBQXRCLDZCQUFzQjtVQUF0QixzQkFBc0I7RUFDdEIsZ0JBQWdCO0FBQ2xCOztBQUVBO0VBQ0UsZ0JBQWdCO0VBQ2hCLG1CQUFtQjtBQUNyQjs7QUFFQTtFQUNFLGVBQWU7RUFDZixXQUFXO0FBQ2I7O0FBRUE7RUFDRSxjQUFjO0VBQ2QsaUJBQWlCO0FBQ25COztBQUNBOztFQUVFLGVBQWU7RUFDZjtBQUNGOztBQUNBO0VBQ0UsMEJBQWtCO0VBQWxCLHVCQUFrQjtFQUFsQixrQkFBa0I7QUFDcEIiLCJmaWxlIjoic3JjL2FwcC9pbnZlbnRvcnkvaW52ZW50b3J5LmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhhbXBsZS1jb250YWluZXIge1xyXG4gIGRpc3BsYXk6IGZsZXg7XHJcbiAgZmxleC1kaXJlY3Rpb246IGNvbHVtbjtcclxuICBtaW4td2lkdGg6IDMwMHB4O1xyXG59XHJcblxyXG4uZXhhbXBsZS1oZWFkZXIge1xyXG4gIG1pbi1oZWlnaHQ6IDY0cHg7XHJcbiAgcGFkZGluZzogOHB4IDI0cHggMDtcclxufVxyXG5cclxuLm1hdC1mb3JtLWZpZWxkIHtcclxuICBmb250LXNpemU6IDE0cHg7XHJcbiAgd2lkdGg6IDEwMCU7XHJcbn1cclxuXHJcbi5tYXQtdGFibGUge1xyXG4gIG92ZXJmbG93OiBhdXRvO1xyXG4gIG1heC1oZWlnaHQ6IDc1MHB4O1xyXG59XHJcbi50YWJsZXtcclxuICBcclxuICBtYXJnaW4tbGVmdDogOSU7XHJcbiAgbWFyZ2luLXJpZ2h0OiA5JVxyXG59XHJcbi5jb2x1bW4td2lkdGh7XHJcbiAgd2lkdGg6IGZpdC1jb250ZW50O1xyXG59Il19 */"
 
 /***/ }),
 
@@ -622,7 +688,7 @@ module.exports = "table {\r\n    width: 100%;\r\n  }\r\n/*# sourceMappingURL=dat
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <app-left-nav-inventory></app-left-nav-inventory> -->\n\n<!-- <form class=\"example-form\">\n  <mat-form-field class=\"example-full-width\">\n    <input matInput placeholder=\"Favorite food\" value=\"Sushi\">\n  </mat-form-field>\n\n  <mat-form-field class=\"example-full-width\">\n    <textarea matInput placeholder=\"Leave a comment\"></textarea>\n  </mat-form-field>\n</form> -->\n<!-- <table mat-table >\n   <th mat-header-cell><tr><td>Id</td><td>Name</td><td>Author</td><td>Category</td><td>Price</td></tr></th>\n<div *ngFor=\"let inventory of mockInventory\">\n    <tr>\n      <td >{{inventory.bookId}}</td>\n      <td >{{inventory.bookName}}</td>\n      <td >{{inventory.authorName}}</td>\n      <td >{{inventory.category}}</td>\n      <td >{{inventory.bookPrice}}</td>\n    </tr>\n</div>\n</table> -->\n\n<div class=\"example-container mat-elevation-z8\">\n\t<div class=\"example-header\">\n\t\t<mat-form-field>\n\t\t\t<input matInput #filter (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\n\t\t\t<button mat-icon-button matSuffix aria-label=\"clear\" *ngIf=\"filter.value\" (click)=\"filter.value=''; applyFilter('');\">\n        <mat-icon>close</mat-icon>\n      </button>\n\t\t</mat-form-field>\n\t</div>\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\">\n\n  <!--- Note that these columns can be defined in any order.\n        The actual rendered columns are set as a property on the row definition\" -->\n\n  <!-- Position Column -->\n  <ng-container matColumnDef=\"id\">\n    <th mat-header-cell *matHeaderCellDef> Id </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.bookId}} </td>\n  </ng-container>\n\n  <!-- Name Column -->\n  <ng-container matColumnDef=\"name\">\n    <th mat-header-cell *matHeaderCellDef> Name </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.bookName}} </td>\n  </ng-container>\n\n  <!-- Weight Column -->\n  <ng-container matColumnDef=\"author\">\n    <th mat-header-cell *matHeaderCellDef> Author </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.authorName}} </td>\n  </ng-container>\n\n  <!-- Symbol Column -->\n  <ng-container matColumnDef=\"category\">\n    <th mat-header-cell *matHeaderCellDef> Category </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\n  </ng-container>\n\n  <!--price column-->\n  <ng-container matColumnDef=\"price\">\n    <th mat-header-cell *matHeaderCellDef> Price </th>\n    <td mat-cell *matCellDef=\"let element\"> {{element.bookPrice}} </td>\n  </ng-container>\n\n  <!--Action column-->\n  <ng-container matColumnDef=\"action\">\n    <th mat-header-cell *matHeaderCellDef> Action </th>\n    <td mat-cell *matCellDef=\"let element\"><button mat-button (click)=\"editItem(row)\">edit</button></td>\n  </ng-container>\n\n\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\n</table>\n<!-- <mat-paginator [pageSizeOptions]=\"[5, 10, 20]\" showFirstLastButtons></mat-paginator> -->\n<button mat-button color=\"primary\" (click)=\"addBook()\">Add book</button>\n\n\n"
+module.exports = "\r\n<div class=\"table\">\r\n<div class=\"example-container mat-elevation-z8\">\r\n\t<div class=\"example-header\">\r\n\t\t<mat-form-field>\r\n\t\t\t<input matInput #filter (keyup)=\"applyFilter($event.target.value)\" placeholder=\"Filter\">\r\n\t\t\t<button mat-icon-button matSuffix aria-label=\"clear\" *ngIf=\"filter.value\" (click)=\"filter.value=''; applyFilter('');\">\r\n        <mat-icon>close</mat-icon>\r\n      </button>\r\n\t\t</mat-form-field>\r\n\t</div>\r\n<table mat-table [dataSource]=\"dataSource\" class=\"mat-elevation-z8\" *ngIf=\"inventoryTable\">\r\n\r\n  <!--- Note that these columns can be defined in any order.\r\n        The actual rendered columns are set as a property on the row definition\" -->\r\n\r\n  <!-- Position Column -->\r\n  <ng-container matColumnDef=\"id\">\r\n    <th mat-header-cell *matHeaderCellDef> Id </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.id}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Name Column -->\r\n  <ng-container matColumnDef=\"name\">\r\n    <th mat-header-cell *matHeaderCellDef> Name </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.bookName}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Weight Column -->\r\n  <ng-container matColumnDef=\"author\">\r\n    <th mat-header-cell *matHeaderCellDef> Author </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.authorName}} </td>\r\n  </ng-container>\r\n\r\n  <!-- Symbol Column -->\r\n  <ng-container matColumnDef=\"category\">\r\n    <th mat-header-cell *matHeaderCellDef> Category </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.category}} </td>\r\n  </ng-container>\r\n\r\n  <!--price column-->\r\n  <ng-container matColumnDef=\"price\">\r\n    <th mat-header-cell *matHeaderCellDef> Price </th>\r\n    <td mat-cell *matCellDef=\"let element\"> {{element.bookPrice}} </td>\r\n  </ng-container>\r\n\r\n  <!-- <ng-container matColumnDef=\"price\" >\r\n    <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>\r\n    <mat-cell *matCellDef=\"let element\">\r\n      <mat-form-field floatLabel=\"never\" >\r\n        <input matInput placeholder=\"Price\" [value]=\"element.bookPrice\" [(ngModel)]=\"element.bookPrice\">\r\n      </mat-form-field>\r\n    </mat-cell>\r\n  </ng-container> -->\r\n\r\n  <!--Action column-->\r\n  <ng-container matColumnDef=\"status\">\r\n    <th mat-header-cell *matHeaderCellDef> Status </th>\r\n    <td mat-cell *matCellDef=\"let element\">{{element.status}}</td>\r\n  </ng-container>\r\n\r\n  <tr mat-header-row *matHeaderRowDef=\"displayedColumns\"></tr>\r\n  <tr mat-row *matRowDef=\"let row; columns: displayedColumns;\"></tr>\r\n</table>\r\n<mat-paginator [pageSizeOptions]=\"[5, 10]\"></mat-paginator>\r\n</div>\r\n\r\n<div>\r\n  <!-- <mat-icon aria-hidden=\"false\" aria-label=\"Example home icon\" (click)=\"toggle()\" style=\"cursor: pointer\">add</mat-icon> -->\r\n  <button mat-raised-button (click)=\"openDialog()\">Pick one</button>\r\n</div>\r\n\r\n\r\n<div *ngIf=\"show\">\r\n  <form class=\"example-form\" name=\"inventory\" id =\"inventory\"  method=\"post\">\r\n    <mat-form-field class=\"example-full-width\">\r\n      <input matInput placeholder=\"Book Name\" [(ngModel)]=\"inventory.bookName\" name=\"bookName\" >  \r\n    </mat-form-field>\r\n  \r\n    <mat-form-field class=\"example-full-width\">\r\n      <input matInput placeholder=\"Author Name\" [(ngModel)]=\"inventory.authorName\" name=\"authorName\">\r\n    </mat-form-field>\r\n  \r\n    <mat-form-field class=\"example-full-width\">\r\n      <input matInput placeholder=\"Category\" [(ngModel)]=\"inventory.category\" name=\"category\">\r\n    </mat-form-field>\r\n  \r\n    <mat-form-field class=\"example-full-width\">\r\n      <input matInput placeholder=\"price\" [(ngModel)]=\"inventory.bookPrice\" name=\"bookPrice\" pattern=\"[0-9]{0-4}\">\r\n    </mat-form-field>\r\n    <button mat-button color=\"primary\" id=\"add-book\" (click)=\"addBook()\">Add</button>\r\n  </form>\r\n  \r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -630,111 +696,127 @@ module.exports = "<!-- <app-left-nav-inventory></app-left-nav-inventory> -->\n\n
 /*!**************************************************!*\
   !*** ./src/app/inventory/inventory.component.ts ***!
   \**************************************************/
-/*! exports provided: InventoryComponent */
+/*! exports provided: InventoryComponent, DialogOverviewExampleDialog */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InventoryComponent", function() { return InventoryComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DialogOverviewExampleDialog", function() { return DialogOverviewExampleDialog; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _Mock_data_mock_data_inventory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Mock_data/mock_data_inventory */ "./src/app/Mock_data/mock_data_inventory.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _service_inventory_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../service/inventory.service */ "./src/app/service/inventory.service.ts");
+/* harmony import */ var _models_inventoryList__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../models/inventoryList */ "./src/app/models/inventoryList.ts");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+
+
 
 
 
 
 
 var InventoryComponent = /** @class */ (function () {
-    function InventoryComponent(router) {
+    function InventoryComponent(router, inventoryService, dialog) {
         this.router = router;
-        this.mockInventory = _Mock_data_mock_data_inventory__WEBPACK_IMPORTED_MODULE_2__["mock_inventory"];
-        this.displayedColumns = ['id', 'name', 'author', 'category', 'price', 'action'];
-        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatTableDataSource"](this.mockInventory);
+        this.inventoryService = inventoryService;
+        this.dialog = dialog;
+        this.inventory = new _models_inventoryList__WEBPACK_IMPORTED_MODULE_5__["InventoryList"]();
+        this.bookList = [];
+        this.displayedColumns = ['id', 'name', 'author', 'category', 'price', 'status'];
+        this.getInventoryList();
     }
     InventoryComponent.prototype.ngOnInit = function () {
-        console.log("MOCK DATA--", this.mockInventory);
+        this.inventoryTable = true;
+        this.getInventoryList();
+    };
+    InventoryComponent.prototype.getInventoryList = function () {
+        var _this = this;
+        this.inventoryService.getReequest('/inventory').subscribe(function (result) {
+            _this.bookList = result;
+            _this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatTableDataSource"](_this.bookList);
+            _this.dataSource.paginator = _this.paginator;
+        });
     };
     InventoryComponent.prototype.applyFilter = function (filterValue) {
         filterValue = filterValue.trim(); // Remove whitespace
         filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
         this.dataSource.filter = filterValue;
     };
-    InventoryComponent.prototype.editItem = function (item) {
-        console.log("edit method called " + item);
-        //this.store.dispatch(new itemsActions.SetCurrentItemId(item.bookId));
-        //this.router.navigate(['/items', item.bookId, 'edit'])
-    };
     InventoryComponent.prototype.addBook = function () {
-        console.log("in add book form");
-        this.router.navigate(['./add-book']);
+        var _this = this;
+        this.inventory.status = 'available';
+        this.inventoryService.postRequest('/inventory', this.inventory).subscribe(function (result) {
+            _this.bookList.push(result);
+            _this.dataSource.paginator = _this.paginator;
+        });
+        this.formClear();
+        this.show = false;
     };
+    InventoryComponent.prototype.formClear = function () {
+        this.inventory.bookName = '';
+        this.inventory.authorName = '';
+        this.inventory.category = '';
+        this.inventory.bookPrice = 0;
+        this.inventory.status = 'available';
+    };
+    InventoryComponent.prototype.toggle = function () {
+        console.log("in add book form");
+        //this.router.navigate(['./add-book']);
+        if (this.show == false) {
+            this.inventoryTable = false;
+            this.show = true;
+        }
+        else {
+            this.show = false;
+            this.inventoryTable = true;
+        }
+    };
+    InventoryComponent.prototype.openDialog = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+            width: '250px',
+            data: { name: this.inventory.bookName, author: this.inventory.authorName }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            console.log('The dialog was closed');
+            _this.bookList = result;
+        });
+    };
+    tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"]),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatPaginator"])
+    ], InventoryComponent.prototype, "paginator", void 0);
     InventoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-inventory',
             template: __webpack_require__(/*! ./inventory.component.html */ "./src/app/inventory/inventory.component.html"),
             styles: [__webpack_require__(/*! ./inventory.component.css */ "./src/app/inventory/inventory.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _service_inventory_service__WEBPACK_IMPORTED_MODULE_4__["InventoryService"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]])
     ], InventoryComponent);
     return InventoryComponent;
 }());
 
-
-
-/***/ }),
-
-/***/ "./src/app/left-nav-inventory/left-nav-inventory.component.css":
-/*!*********************************************************************!*\
-  !*** ./src/app/left-nav-inventory/left-nav-inventory.component.css ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xlZnQtbmF2LWludmVudG9yeS9sZWZ0LW5hdi1pbnZlbnRvcnkuY29tcG9uZW50LmNzcyJ9 */"
-
-/***/ }),
-
-/***/ "./src/app/left-nav-inventory/left-nav-inventory.component.html":
-/*!**********************************************************************!*\
-  !*** ./src/app/left-nav-inventory/left-nav-inventory.component.html ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n  <div>\n    <ul>\n      <li><button (click)=\"openForm()\">Search</button></li>\n      <li><button (click)=\"openForm()\">Add</button></li>\n      <li><button (click)=\"openForm()\">Modify</button></li>\n      <li><button (click)=\"openForm()\">Delete</button></li>\n    </ul>\n  </div>\n\n"
-
-/***/ }),
-
-/***/ "./src/app/left-nav-inventory/left-nav-inventory.component.ts":
-/*!********************************************************************!*\
-  !*** ./src/app/left-nav-inventory/left-nav-inventory.component.ts ***!
-  \********************************************************************/
-/*! exports provided: LeftNavInventoryComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LeftNavInventoryComponent", function() { return LeftNavInventoryComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var LeftNavInventoryComponent = /** @class */ (function () {
-    function LeftNavInventoryComponent() {
+var DialogOverviewExampleDialog = /** @class */ (function () {
+    function DialogOverviewExampleDialog(dialogRef, data) {
+        this.dialogRef = dialogRef;
+        this.data = data;
     }
-    LeftNavInventoryComponent.prototype.ngOnInit = function () {
+    DialogOverviewExampleDialog.prototype.onNoClick = function () {
+        this.dialogRef.close();
     };
-    LeftNavInventoryComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    DialogOverviewExampleDialog = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-left-nav-inventory',
-            template: __webpack_require__(/*! ./left-nav-inventory.component.html */ "./src/app/left-nav-inventory/left-nav-inventory.component.html"),
-            styles: [__webpack_require__(/*! ./left-nav-inventory.component.css */ "./src/app/left-nav-inventory/left-nav-inventory.component.css")]
+            selector: 'add-book-form',
+            template: __webpack_require__(/*! ./add-book-form.html */ "./src/app/inventory/add-book-form.html"),
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], LeftNavInventoryComponent);
-    return LeftNavInventoryComponent;
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__param"](1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MAT_DIALOG_DATA"])),
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_6__["MatDialogRef"],
+            InventoryComponent])
+    ], DialogOverviewExampleDialog);
+    return DialogOverviewExampleDialog;
 }());
 
 
@@ -797,56 +879,62 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/services/services.component.css":
-/*!*************************************************!*\
-  !*** ./src/app/services/services.component.css ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NlcnZpY2VzL3NlcnZpY2VzLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/services/services.component.html":
-/*!**************************************************!*\
-  !*** ./src/app/services/services.component.html ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  services works!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/services/services.component.ts":
-/*!************************************************!*\
-  !*** ./src/app/services/services.component.ts ***!
-  \************************************************/
-/*! exports provided: ServicesComponent */
+/***/ "./src/app/models/inventoryList.ts":
+/*!*****************************************!*\
+  !*** ./src/app/models/inventoryList.ts ***!
+  \*****************************************/
+/*! exports provided: InventoryList */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ServicesComponent", function() { return ServicesComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InventoryList", function() { return InventoryList; });
+var InventoryList = /** @class */ (function () {
+    function InventoryList() {
+    }
+    return InventoryList;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/service/inventory.service.ts":
+/*!**********************************************!*\
+  !*** ./src/app/service/inventory.service.ts ***!
+  \**********************************************/
+/*! exports provided: InventoryService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InventoryService", function() { return InventoryService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 
 
-var ServicesComponent = /** @class */ (function () {
-    function ServicesComponent() {
+
+var InventoryService = /** @class */ (function () {
+    function InventoryService(http) {
+        this.http = http;
+        // mockInventory:Inventory[] =mock_inventory;
+        this.url = 'http://localhost:3000';
+        this.bookList = new Array();
     }
-    ServicesComponent.prototype.ngOnInit = function () {
+    InventoryService.prototype.getReequest = function (resource) {
+        return this.http.get(this.url + resource);
     };
-    ServicesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-services',
-            template: __webpack_require__(/*! ./services.component.html */ "./src/app/services/services.component.html"),
-            styles: [__webpack_require__(/*! ./services.component.css */ "./src/app/services/services.component.css")]
+    InventoryService.prototype.postRequest = function (resource, body) {
+        return this.http.post(this.url + resource, body);
+    };
+    InventoryService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+            providedIn: 'root'
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [])
-    ], ServicesComponent);
-    return ServicesComponent;
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]])
+    ], InventoryService);
+    return InventoryService;
 }());
 
 

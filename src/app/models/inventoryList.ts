@@ -5,6 +5,7 @@ export class InventoryList implements Inventory{
     authorName: string;
     category: string;
     bookPrice: number;
+    status:string
 
     
 

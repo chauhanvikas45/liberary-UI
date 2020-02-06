@@ -5,9 +5,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { LoginComponent } from './login/login.component';
 import { InventoryComponent } from './inventory/inventory.component';
-import { LeftNavInventoryComponent } from './left-nav-inventory/left-nav-inventory.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { AddBookComponent } from './add-book/add-book.component';
+import { BookRegisterComponent } from './book-register/book-register.component';
 
 
 const routes: Routes = [
@@ -15,10 +15,10 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
-{ path: 'inventory', component: InventoryComponent },
-{ path: 'left-nav-inventory', component: LeftNavInventoryComponent },
-{ path: 'employee', component: EmployeeComponent },
-{ path: 'add-book', component: AddBookComponent },
+  { path: 'inventory', component: InventoryComponent },
+  { path: 'employee', component: EmployeeComponent },
+  { path: 'add-book', component: AddBookComponent },
+  { path: 'book-register', component: BookRegisterComponent },
 
 
 ];

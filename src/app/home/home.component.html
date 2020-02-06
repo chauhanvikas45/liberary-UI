@@ -3,20 +3,20 @@
         <br>
       </div>
       <section class="cms-boxes">
-        <div class="container-fluid">
+        <div class="container-fluid" (click) = "redirect('./inventory')">
           <div class="row">
             <div class="col-md-4 cms-boxes-outer">
               <div class="cms-boxes-items cms-features">
                 <div class="boxes-align">
                   <div class="small-box">
                     <!--<i class="fa fa-4x fa-laptop">&nbsp;</i>-->
-                    <img src="../assets/images/inventory.jpg" (click) = "redirect('./inventory')">
+                    <img src="../assets/images/inventory.jpg" >
                     
                   </div>
                 </div>
               </div>
             </div>
-            <div class="col-md-4 cms-boxes-outer">
+            <div class="col-md-4 cms-boxes-outer" (click) = "redirect('./book-register')">
               <div class="cms-boxes-items cms-security">
                 <div class="boxes-align">
                   <div class="small-box">

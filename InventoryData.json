@@ -1,95 +1,76 @@
 {
   "inventory": [
     {
-      "id": 1,
-      "bookName": "JAVA",
-      "authorName": "AAAA",
-      "category": "X",
-      "bookPrice": 11
+      "bookName": "df",
+      "authorName": "sdf",
+      "category": "sf",
+      "bookPrice": "sfs",
+      "status": "available",
+      "id": 34
     },
     {
-      "id": 2,
-      "bookName": "JAVA2",
-      "authorName": "BBBB",
-      "category": "Y",
-      "bookPrice": 22
+      "bookName": "hjhj",
+      "authorName": "gkg",
+      "category": "gjkg",
+      "bookPrice": "gk",
+      "status": "available",
+      "id": 35
     },
     {
-      "id": 3,
-      "bookName": "JAVA3",
-      "authorName": "BBBB",
-      "category": "Y",
-      "bookPrice": 22
+      "bookName": "hju",
+      "authorName": "ghjkg",
+      "category": "ghjkgh",
+      "bookPrice": "0gjg",
+      "status": "available",
+      "id": 36
     },
     {
-      "bookName": "sdsa",
-      "authorName": "asd",
-      "category": "adad",
-      "bookPrice": "22",
-      "id": 13
+      "bookName": "grfgd",
+      "authorName": "dfgd",
+      "category": "dfgfd",
+      "bookPrice": "0dgd",
+      "status": "available",
+      "id": 37
     },
     {
-      "bookName": "sad",
-      "authorName": "sada",
-      "category": "asdsa",
-      "bookPrice": "22",
-      "id": 14
+      "bookName": "fdgdg",
+      "authorName": "dfgd",
+      "category": "dgd",
+      "bookPrice": "0dgd",
+      "status": "available",
+      "id": 38
     },
     {
-      "bookName": "ew",
-      "authorName": "dsf",
-      "category": "sfsd",
-      "bookPrice": "22",
-      "id": 15
+      "status": "available",
+      "id": 39
     },
     {
-      "bookName": "rge",
-      "authorName": "ergte",
-      "category": "dgfd",
-      "bookPrice": "dfgd",
-      "id": 16
+      "status": "available",
+      "id": 40
     },
     {
-      "bookName": "fjfh",
-      "authorName": "fjhj",
-      "category": "trds",
-      "bookPrice": "438667",
-      "id": 17
+      "status": "available",
+      "id": 41
     },
     {
-      "bookName": "abc",
-      "authorName": "sajd",
-      "category": "ikdal",
-      "bookPrice": "idwakd",
-      "id": 18
+      "status": "available",
+      "id": 42
     },
     {
-      "bookName": "asd",
-      "authorName": "asd",
-      "category": "asd",
-      "bookPrice": "ww",
-      "id": 19
+      "status": "available",
+      "id": 43
     },
     {
-      "bookName": "hejj",
-      "authorName": "laldk",
-      "category": "sfd,;f",
-      "bookPrice": "fsdkasf,",
-      "id": 20
+      "status": "available",
+      "id": 44
     },
     {
-      "bookName": "asd",
-      "authorName": "ads",
-      "category": "ad",
-      "bookPrice": "wq",
-      "id": 21
+      "status": "available",
+      "id": 45
     },
     {
-      "bookName": "asd",
-      "authorName": "asd",
-      "category": "aad",
-      "bookPrice": 0,
-      "id": 22
+      "status": "available",
+      "id": 46
     }
   ],
   "book_register": [
