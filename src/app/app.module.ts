@@ -19,6 +19,7 @@ import { MatSliderModule,MatToolbarModule,MatButtonModule,MatFormFieldModule,Mat
   MatInputModule,MatTableModule,MatChipsModule } from '@angular/material';
 import { AddBookComponent } from './add-book/add-book.component';
 import { FormsModule } from '@angular/forms';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { FormsModule } from '@angular/forms';
         MatInputModule,
         MatTableModule,
         MatChipsModule,
-        FormsModule
+        FormsModule,
+        MatPaginatorModule
         
         
   ],

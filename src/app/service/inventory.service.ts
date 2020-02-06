@@ -4,6 +4,8 @@ import { mock_inventory } from '../Mock_data/mock_data_inventory';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { InventoryComponent } from '../inventory/inventory.component';
+import { Observable } from 'rxjs';
+import { InventoryList } from '../models/inventoryList';
 
 @Injectable({
   providedIn:'root'
@@ -15,10 +17,10 @@ export class InventoryService {
 
   constructor(private http: HttpClient) { }
 
-  getReequest(resource:string ) {
+  getReequest(resource:string )  : Observable<Object> {
     return this.http.get(this.url+resource)
   }
-  postRequest(resource: string,body:Inventory){
+  postRequest(resource: string,body:Inventory) : Observable<Object>{
     return this.http.post(this.url+resource,body)
   }
 
