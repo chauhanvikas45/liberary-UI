@@ -4,4 +4,5 @@ export interface Inventory{
     authorName:string;
     category:string;
     bookPrice:number;
+    status:string
 }

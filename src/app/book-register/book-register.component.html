@@ -1,0 +1,41 @@
+<div style="margin-left: 9%;margin-right: 9%;">
+<div style="margin-left: 40%;">
+  <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+  <mat-button-toggle value="bold" (click)=toggle(true)>Issue</mat-button-toggle>
+  <mat-button-toggle value="italic" (click)=toggle(false)>Return</mat-button-toggle>
+  <!-- <mat-button-toggle value="underline">Underline</mat-button-toggle> -->
+</mat-button-toggle-group>
+</div>
+<div id="issueForm" *ngIf="showIssueForm">
+  <div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput #filter (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        <button mat-icon-button matSuffix aria-label="clear" *ngIf="filter.value" (click)="filter.value=''; applyFilter('');">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+<p>
+  issue form
+</p>
+</div>
+</div>
+
+
+<div id="returnForm" *ngIf="showReturnForm">
+  <div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput #filter (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+        <button mat-icon-button matSuffix aria-label="clear" *ngIf="filter.value" (click)="filter.value=''; applyFilter('');">
+          <mat-icon>close</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  <p>
+    return form
+  </p>
+</div>
+</div>
+</div> 
