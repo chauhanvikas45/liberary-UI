@@ -77,8 +77,32 @@
       "authorName": "h",
       "category": "h",
       "bookPrice": "8",
-      "status": "available",
+      "status": "issued",
       "id": 47
+    },
+    {
+      "bookName": "utyj",
+      "authorName": "fj",
+      "category": "rurtyu",
+      "bookPrice": "rtyr",
+      "status": "issued",
+      "id": 48
+    },
+    {
+      "bookName": "jutr",
+      "authorName": "yutyu",
+      "category": "tyut",
+      "bookPrice": "tutyu",
+      "status": "available",
+      "id": 49
+    },
+    {
+      "bookName": "asmit",
+      "authorName": "asmit",
+      "category": "asmit",
+      "bookPrice": "asmit",
+      "status": "available",
+      "id": 50
     }
   ],
   "book_register": [

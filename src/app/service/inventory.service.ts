@@ -16,7 +16,7 @@ export class InventoryService {
 
   constructor(private http: HttpClient) { }
 
-  getReequest(resource:string )  : Observable<Object> {
+  getRequest(resource:string )  : Observable<Object> {
     return this.http.get(this.url+resource)
   }
   postRequest(resource: string,body:Inventory) : Observable<Object>{
