@@ -16,7 +16,7 @@ export class InventoryComponent implements OnInit {
   inventory = new InventoryList();
   bookList = [];
   displayedColumns: string[] = ['id', 'name', 'author', 'category', 'price', 'status'];
-  public dataSource;
+  dataSource: MatTableDataSource<any>;
 
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -34,7 +34,7 @@ export class InventoryComponent implements OnInit {
 
 
   getInventoryList() {
-    this.inventoryService.getReequest('/inventory').subscribe((result: []) => {
+    this.inventoryService.getRequest('/inventory').subscribe((result: []) => {
       this.bookList = result;
       this.dataSource = new MatTableDataSource(this.bookList);
       this.dataSource.paginator = this.paginator;
